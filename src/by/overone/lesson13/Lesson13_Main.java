@@ -7,6 +7,8 @@ import java.util.Scanner;
 public class Lesson13_Main {
     public static void main(String[] args) {
         System.out.println("git1");
+        System.out.println("git2");
+
         Scanner scanner = new Scanner(System.in);
         Bankomat bank = new Bankomat();
 
