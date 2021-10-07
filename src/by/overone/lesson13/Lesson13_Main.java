@@ -1,14 +1,22 @@
 package by.overone.lesson13;
 
 
+import java.lang.reflect.Type;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Lesson13_Main {
+public class Lesson13_Main implements Cloneable {
     public static void main(String[] args) {
         System.out.println("git1");
+        System.out.println("git2");
+        String xxx= new String("ffff");
+        System.out.println(xxx);
+
+
         Scanner scanner = new Scanner(System.in);
         Bankomat bank = new Bankomat();
+
+        System.out.println(Bankomat.class);
 
         System.out.println("-------You are incassator, please, load money-------");
         bank.incassator();
@@ -19,6 +27,8 @@ public class Lesson13_Main {
         Account account1 = new Account(new Random().nextInt(10000));
         account1.condition();
         user(bank,account1);  // абработка счета account1 в банкомате bank - универсальный
+
+        //Bankomat bankClone = (Bankomat) bank.clone();
 
 
     }
@@ -72,6 +82,10 @@ public class Lesson13_Main {
             bank.amount();
             account1.condition();
         }
+    }
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 
 }

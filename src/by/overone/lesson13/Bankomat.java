@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class Bankomat implements IConv {
+public class Bankomat implements IConv,Cloneable{
     private Currency byn = new BYN();
     private Currency usd = new USD();
     private Currency eur = new EUR();
@@ -286,6 +286,10 @@ public class Bankomat implements IConv {
     @Override
     public int hashCode() {
         return 31*(byn.hashCode()+ usd.hashCode()+ eur.hashCode());
+    }
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }
 
