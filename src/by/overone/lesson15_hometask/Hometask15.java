@@ -135,6 +135,52 @@ public class Hometask15 {
 
 
 
+        int count=0;
+        for (int i=0; i<n; i++) {
+
+            int countOFEng = 0;
+            int bal = 0;
+            for (Character letter : arrWords[i].toCharArray())     //  по буквам с for each
+            {
+
+
+                if (((letter >= 'A') && (letter <= 'Z')) || ((letter >= 'a') && (letter <= 'z'))) {
+                    countOFEng++;
+                    if ((letter=='A') || (letter=='E') ||
+                            (letter=='I') || (letter=='O') ||
+                            (letter=='U') || (letter=='Y') ||
+                            (letter=='a') || (letter=='e') ||
+                            (letter=='i') || (letter=='o') ||
+                            (letter=='u') || (letter=='y'))
+                    {bal++;}
+                    else
+                    {bal--;}
+                }
+
+            }
+           // System.out.println("баланс:" + bal);
+           // System.out.println("кол-во латинских символов: " + countOFEng + " количество сиволов: " + arrWords[i].length());
+
+            if (arrWords[i].length()==countOFEng) {
+                if (bal==0) {
+                    System.out.println(arrWords[i]);
+                    count++;
+                }
+            }
+
+
+        }
+        System.out.println("words with English letters and a balance of consonant and vowel letters:"+count);
+
+
+
+
+
+
+
+
+
+
 
 
 
