@@ -14,11 +14,14 @@ public class Hometask15 {
         arri=new int[n];
         System.out.println("Enter  strings");
         scanner.nextLine();
+        double center=0;
         for (int i=0; i<arr.length; i++){
             System.out.println("string"+i+":");
             arr[i]= scanner.nextLine();
             arri[i]=arr[i].length();
+            center+=arri[i];
         }
+        center=center/n;
         showarrs(arri,arr);
 
         // сортировка
@@ -53,8 +56,27 @@ public class Hometask15 {
             }
         }
 
+        //вывод упорядоченных строк
+        System.out.println("Оrdered stringsreferences: ");
+        showarrs(arri,arr);
 
+        //вывод строк меньше средней
+        System.out.println("shotter than middle ");
+        for (int i=0; i<n; i++){
+            if (arri[i]<center){
+                System.out.println(arr[i]+ "  lenth: " + arr[i].length());
+            }
+        }
 
+        System.out.println("middle: "+ center);
+
+        //вывод строк длиннее средней
+        System.out.println("longer than middle ");
+        for (int i=0; i<n; i++){
+            if (arri[i]>center){
+                System.out.println(arr[i]+ "  lenth: " + arr[i].length());
+            }
+        }
 
     }
 
@@ -69,7 +91,7 @@ public class Hometask15 {
 
     public static void showarrs(int[] arri,String[] arr) {
         for (int i = 0; i < arr.length; i++) {
-            System.out.println(i + ":   "+ arri[i]+ "  "+ arr[i]);
+            System.out.println("№" +(i+1) + ":   "+ arr[i]+ "  lenth:"+ arri[i]);
         }
     }
 
