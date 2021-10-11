@@ -1,0 +1,76 @@
+package by.overone.lesson15_hometask;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Hometask15 {
+    public static void main(String[] args) {
+        String[] arr;
+        int[] arri;
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("Enter the number of strings");
+        int n=scanner.nextInt();
+        arr = new String[n];
+        arri=new int[n];
+        System.out.println("Enter  strings");
+        scanner.nextLine();
+        for (int i=0; i<arr.length; i++){
+            System.out.println("string"+i+":");
+            arr[i]= scanner.nextLine();
+            arri[i]=arr[i].length();
+        }
+        showarrs(arri,arr);
+
+        // сортировка
+        int min=arri[0];
+        for (int i=0; i<n; i++){
+            for (int j=i; j<n; j++){
+                if (arri[i]>arri[j]) {
+                    swap(arri,arr,i,j);
+                }
+            }
+        }
+
+        //короткие строки
+        System.out.println("most shorter string(s)");
+        for (int i=0; i<n; i++){
+            if (i==0) {System.out.println(arr[i]+ "  lenth: " + arr[i].length());}
+            if (i>0) {
+                if (arri[i]==arri[i-1]) {
+                    System.out.println(arr[i]+ "  lenth: " + arr[i].length());
+                } else {break;}
+            }
+        }
+
+        //длинные строки
+        System.out.println("most longer string(s)");
+        for (int i=n-1; i>=0; i--){
+            if (i==n-1) {System.out.println(arr[i]+ "  lenth: " + arr[i].length());}
+            if (i<n-1) {
+                if (arri[i]==arri[i+1]) {
+                    System.out.println(arr[i]+ "  lenth: " + arr[i].length());
+                } else {break;}
+            }
+        }
+
+
+
+
+    }
+
+    public static void swap(int[] arri,String[] arr, int x1, int x2) {
+        int bufferi=arri[x1];
+        String bufferStr=arr[x1];
+        arri[x1]=arri[x2];
+        arr[x1]=arr[x2];
+        arri[x2]=bufferi;
+        arr[x2]=bufferStr;
+    }
+
+    public static void showarrs(int[] arri,String[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(i + ":   "+ arri[i]+ "  "+ arr[i]);
+        }
+    }
+
+}
