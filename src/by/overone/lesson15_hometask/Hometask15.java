@@ -78,6 +78,27 @@ public class Hometask15 {
             }
         }
 
+        // Слова
+        // ввод
+        System.out.println();
+        System.out.println("Enter the number of words");
+        int n=scanner.nextInt();
+        arr = new String[n];
+        arri=new int[n];
+        System.out.println("Enter  words");
+        scanner.nextLine();
+
+        for (int i=0; i<arr.length; i++){
+            System.out.println("word #"+(i-1)+":");
+            arr[i]= scanner.nextLine();
+            arri[i]=arr[i].length();
+        }
+
+
+
+
+
+
     }
 
     public static void swap(int[] arri,String[] arr, int x1, int x2) {
