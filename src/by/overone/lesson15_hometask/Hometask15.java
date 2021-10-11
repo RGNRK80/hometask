@@ -90,6 +90,9 @@ public class Hometask15 {
         int[] arrWordsi=new int[n];
         System.out.println("Enter  words");
         scanner.nextLine();
+        char[] charCounter;
+
+        //ввод слов
 
         for (int i=0; i<arrWords.length; i++){
             System.out.println("word #"+(i+1)+":");
@@ -97,20 +100,24 @@ public class Hometask15 {
 
         }
 
+        // разбиваем на символы
         for (int i=0; i<n; i++){
-            int counter=0;
-            for (int j=0; j<arrWords[i].length(); j++){
-                char ch=arrWords[i].charAt(j);
 
-                for (int k=j+1; k<arrWords[i].length(); k++) {
-                    if (ch!=arrWords[i].charAt(k)) {counter++;}       ///////////
+            charCounter=arrWords[i].toCharArray();
+            char[] count=new char[arrWords[i].length()];
+
+            for (int j=0; j<count.length; j++){
+                for (int k=j; k<count.length; k++){
+
+                    if (count[j]!=count[k]){
+                    count[j]=charCounter[k];}
+
                 }
             }
-            arrWordsi[i]=counter;
 
 
         }
-        showarrs(arrWordsi,arrWords);
+
 
 
 
@@ -132,6 +139,10 @@ public class Hometask15 {
         for (int i = 0; i < arr.length; i++) {
             System.out.println("№" +(i+1) + ":   "+ arr[i]+ "  lenth:"+ arri[i]);
         }
+    }
+
+    public static void charcheck(){
+
     }
 
 }
