@@ -1,6 +1,7 @@
 package by.overone.lesson15_hometask;
 
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Hometask15 {
@@ -82,6 +83,7 @@ public class Hometask15 {
         }   */
 
         // Слова
+
         // ввод
         System.out.println();
         System.out.println("Enter the number of words");
@@ -97,26 +99,47 @@ public class Hometask15 {
         for (int i=0; i<arrWords.length; i++){
             System.out.println("word #"+(i+1)+":");
             arrWords[i]= scanner.nextLine();
-
         }
+
+        // #4 -  Ввести n слов с консоли. Найти слово, в котором число различных символов минимально. Если
+        //таких слов несколько, найти первое из них.
 
         // разбиваем на символы
         for (int i=0; i<n; i++){
-
             charCounter=arrWords[i].toCharArray();
-            char[] count=new char[arrWords[i].length()];
+            Arrays.sort(charCounter); // отсортировано
 
-            for (int j=0; j<count.length; j++){
-                for (int k=j; k<count.length; k++){
-
-                    if (count[j]!=count[k]){
-                    count[j]=charCounter[k];}
-
+            int check=0;
+            for (int j=0; j<charCounter.length-1; j++){
+                if (charCounter[j]==charCounter[j+1]) {
+                    check+=1;
                 }
             }
-
-
+            arrWordsi[i]=check;
         }
+
+        int min=0;
+        String strmin=arrWords[0];
+
+        for (int i=0; i< arrWords.length;i++){
+            if (min>arrWordsi[i]){
+               min=arrWordsi[i];
+               strmin=arrWords[i];
+
+            }
+        }
+        System.out.println("first word with minimal of different characters is: " + strmin);
+
+      // #5 Ввести n слов с консоли. Найти количество слов, содержащих только символы латинского
+      // алфавита, а среди них – количество слов с равным числом гласных и согласных букв.
+
+
+
+
+
+
+
+
 
 
 
@@ -139,10 +162,6 @@ public class Hometask15 {
         for (int i = 0; i < arr.length; i++) {
             System.out.println("№" +(i+1) + ":   "+ arr[i]+ "  lenth:"+ arri[i]);
         }
-    }
-
-    public static void charcheck(){
-
     }
 
 }
