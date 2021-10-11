@@ -173,6 +173,10 @@ public class Hometask15 {
         System.out.println("words with English letters and a balance of consonant and vowel letters:"+count);
 
 
+        // #6. Ввести n слов с консоли. Найти слово, символы в котором идут в строгом порядке возрастания их
+        //кодов. Если таких слов несколько, найти первое из них.
+
+
 
 
 
