@@ -1,6 +1,6 @@
 package by.overone.lesson15_hometask;
 
-import java.util.Arrays;
+
 import java.util.Scanner;
 
 public class Hometask15 {
@@ -9,7 +9,10 @@ public class Hometask15 {
         int[] arri;
         Scanner scanner=new Scanner(System.in);
         System.out.println("Enter the number of strings");
-        int n=scanner.nextInt();
+        int n;
+
+        /*
+        n=scanner.nextInt();
         arr = new String[n];
         arri=new int[n];
         System.out.println("Enter  strings");
@@ -76,23 +79,38 @@ public class Hometask15 {
             if (arri[i]>center){
                 System.out.println(arr[i]+ "  lenth: " + arr[i].length());
             }
-        }
+        }   */
 
         // Слова
         // ввод
         System.out.println();
         System.out.println("Enter the number of words");
-        int n=scanner.nextInt();
-        arr = new String[n];
-        arri=new int[n];
+        n=scanner.nextInt();
+        String[] arrWords = new String[n];
+        int[] arrWordsi=new int[n];
         System.out.println("Enter  words");
         scanner.nextLine();
 
-        for (int i=0; i<arr.length; i++){
-            System.out.println("word #"+(i-1)+":");
-            arr[i]= scanner.nextLine();
-            arri[i]=arr[i].length();
+        for (int i=0; i<arrWords.length; i++){
+            System.out.println("word #"+(i+1)+":");
+            arrWords[i]= scanner.nextLine();
+
         }
+
+        for (int i=0; i<n; i++){
+            int counter=0;
+            for (int j=0; j<arrWords[i].length(); j++){
+                char ch=arrWords[i].charAt(j);
+
+                for (int k=j+1; k<arrWords[i].length(); k++) {
+                    if (ch!=arrWords[i].charAt(k)) {counter++;}       ///////////
+                }
+            }
+            arrWordsi[i]=counter;
+
+
+        }
+        showarrs(arrWordsi,arrWords);
 
 
 
